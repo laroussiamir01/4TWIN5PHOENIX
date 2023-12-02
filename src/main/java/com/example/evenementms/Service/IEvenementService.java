@@ -1,6 +1,7 @@
 package com.example.evenementms.Service;
 
 import com.example.evenementms.Entity.Evenement;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Date;
 import java.util.List;
