@@ -34,6 +34,17 @@ public class BlocRestApi {
         return new ResponseEntity<>(blocService.updateBloc(idBloc, bloc),
                 HttpStatus.OK);
     }
+    @GetMapping(value = "/{idBloc}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(HttpStatus.OK)
+    public ResponseEntity<Bloc> getBlocById(@PathVariable(value = "idBloc") long idBloc) {
+        Bloc bloc = blocService.getBlocById(idBloc);
+
+        if (bloc != null) {
+            return new ResponseEntity<>(bloc, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
     @DeleteMapping(value = "/{idBloc}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<String> deleteBloc(@PathVariable(value = "idBloc") long idBloc) {

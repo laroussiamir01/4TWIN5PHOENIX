@@ -38,4 +38,10 @@ public class BlocService {
         } else
             return "bloc non supprimé";
     }
+    public Bloc getBlocById(long idBloc) {
+        // Implement logic to retrieve Bloc by ID from your data source
+        // For example, you might use a repository or some other data access method
+        // This is a placeholder and should be adapted based on your specific implementation
+        return blocRepository.findById(idBloc).orElse(null);
+    }
 }
