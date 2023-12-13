@@ -25,7 +25,7 @@ public class EvenementServiceImpl implements IEvenementService{
     public Evenement addEvenement(Evenement evenement) {
 
         Evenement savedEvenement = evenementRepository.save(evenement);
-        sendEmail(savedEvenement);
+      //  sendEmail(savedEvenement);
         return savedEvenement;
 
     }
