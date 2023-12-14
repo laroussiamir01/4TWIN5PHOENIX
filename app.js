@@ -69,7 +69,7 @@ client.start((error) => {
   console.log('Registered with Eureka');
 });
 
-// Démarrer le serveur de notre application
+// Démarrer le serveur 
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}/projects`);
 });
