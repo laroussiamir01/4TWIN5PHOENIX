@@ -16,10 +16,11 @@ import java.util.List;
 public class FoyerRestApi {
 @Autowired
     private FoyerService foyerService;
-    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping()
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<Foyer> createFoyer(@RequestBody Foyer foyer) {
         return new ResponseEntity<>(foyerService.addFoyer(foyer), HttpStatus.OK);
+
     }
     @GetMapping("/{idFoyer}")
     public ResponseEntity<Foyer> getFoyerById(@PathVariable(value = "idFoyer") long idFoyer) {
