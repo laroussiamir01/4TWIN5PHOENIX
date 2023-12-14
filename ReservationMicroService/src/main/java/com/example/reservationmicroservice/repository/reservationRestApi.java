@@ -12,6 +12,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin("*")
+//api
 @RequestMapping("/reservations")
 public class reservationRestApi {
     @Autowired
