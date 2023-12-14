@@ -1,0 +1,42 @@
+
+<button class="btn btn-danger btn-sm action-button"
+  (click)="addP()">
+  <i class="fas fa-trash-alt"></i> Ajouter un projet
+</button>
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>description</th>
+      <th>startDate</th>
+      <th>endDate</th>
+      <th>Actions</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of projects">
+      <td>{{ p.name }}</td>
+
+      <td>{{ p.description }}</td>
+      <td>{{ p.startDate | date:'yyyy-MM-dd' }}</td>
+      <td>{{ p.endDate | date:'yyyy-MM-dd' }}</td>
+
+      <td>
+        <button class="btn btn-primary btn-sm action-button"
+          (click)="detailP(p.name)">
+          <i class="fas fa-info-circle"></i> Détails
+        </button>
+
+        <button class="btn btn-warning btn-sm action-button"
+          (click)="editProjet(p.name)">
+          <i class="fas fa-edit"></i> Modifier
+        </button>
+        <button class="btn btn-danger btn-sm action-button"
+          (click)="deleteProject(p.name)">
+          <i class="fas fa-trash-alt"></i> Supprimer
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

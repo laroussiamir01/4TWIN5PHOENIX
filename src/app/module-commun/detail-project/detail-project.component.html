@@ -1,0 +1,16 @@
+<div class="container mt-4">
+  <div *ngIf="projet" class="card">
+    <div class="card-body">
+      <h5 class="card-title text-center">Informations du projet</h5>
+      <div class="row">
+        
+        <div class="col-md-6">
+          <!-- Adjust property names based on your actual project properties -->
+          <p class="card-text"><strong>Description:</strong> {{ projet.description }}</p>
+          <p class="card-text"><strong>Date de début:</strong> {{ projet.startDate | date:'yyyy-MM-dd' }}</p>
+          <p class="card-text"><strong>Date de fin:</strong> {{ projet.endDate | date:'yyyy-MM-dd' }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
