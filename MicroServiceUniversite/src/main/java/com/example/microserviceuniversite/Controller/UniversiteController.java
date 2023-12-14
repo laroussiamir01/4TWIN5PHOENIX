@@ -4,6 +4,9 @@ package com.example.microserviceuniversite.Controller;
 import com.example.microserviceuniversite.Entity.Universite;
 import com.example.microserviceuniversite.Service.UniversiteserviceImpl;
 import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -33,9 +36,12 @@ public class UniversiteController {
         universiteService.deleteUniversite(id);
     }
 
-    @PutMapping("/updateuniversite/{id}")
-    Universite updateUniversite(@RequestBody Universite universite){
-        return universiteService.updateUniversite(universite);
+    @PutMapping(value = "/{idUniversite}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(HttpStatus.OK)
+    public ResponseEntity<Universite> updateUniversite(@PathVariable(value = "idUniversite") long idUniversite,
+                                                       @RequestBody Universite universite){
+        return new ResponseEntity<>(universiteService.updateUniversite(idUniversite, universite),
+                HttpStatus.OK);
     }
 
 }

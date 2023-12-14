@@ -10,34 +10,36 @@ import java.util.List;
 
 @AllArgsConstructor
 @Service
-public class UniversiteserviceImpl implements IUniversiteService {
+public class UniversiteserviceImpl  {
     UniversiteRepository universiteRepository;
 
 
-    @Override
     public Universite addUniversite(Universite universite) {
         return universiteRepository.save(universite);
     }
 
-    @Override
     public Universite getUniversite(long idUniversite) {
         return universiteRepository.findById(idUniversite).orElse(null);
     }
 
-    @Override
     public List<Universite> getAllUniversites() {
         return universiteRepository.findAll();
     }
 
-    @Override
+
     public void deleteUniversite(long idUniversite) {
         universiteRepository.deleteById(idUniversite);
     }
 
-    @Override
-    public Universite updateUniversite(Universite universite) {
-        return universiteRepository.save(universite);
-    }
+    public Universite updateUniversite(long idUniversite, Universite universite) {
+        if (universiteRepository.findById(idUniversite).isPresent()) {
+            Universite universite1 = universiteRepository.findById(idUniversite).get();
+            universite1.setNomUniversite(universite.getNomUniversite());
+            universite1.setAdresse(universite.getAdresse());
+            return universiteRepository.save(universite);
+        } else
+            return null;
 
+    }
 
 }
