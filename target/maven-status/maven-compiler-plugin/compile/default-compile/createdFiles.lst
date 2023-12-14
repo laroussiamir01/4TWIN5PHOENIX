@@ -1,0 +1,5 @@
+com\example\chambre\ChambreApplication.class
+com\example\chambre\repository\ChambreRepository.class
+com\example\chambre\entity\Chambre.class
+com\example\chambre\repository\ChambreRestApi.class
+com\example\chambre\service\ChambreService.class
