@@ -14,7 +14,7 @@ import java.util.List;
 public class ChambreController {
     private final ChambreServiceImpl chambreService;
 
-    @PostMapping()
+    @PostMapping("/add")
     Chambre addChambre(@RequestBody Chambre chambre) {
         return chambreService.addChambre(chambre);
     }
