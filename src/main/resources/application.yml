@@ -6,9 +6,34 @@ spring:
           enabled: true
       routes:
         - id: evenement-route
-          uri: http://localhost:8082/
+          uri: http://evenement:8082/
           predicates:
             - Path=/evenements/**
+        - id: foyer-route
+          uri: http://foyer:8099/
+          predicates:
+            - Path=/foyers/**
+        - id: bloc-route
+          uri: http://bloc:8089/
+          predicates:
+            - Path=/blocs/**
+        - id: reservation-route
+          uri: http://reservation:8084/
+          predicates:
+            - Path=/reservations/**
+        - id: commun-route
+          uri: http://nodejs-microservice:3000/
+          predicates:
+            - Path=/projects/**
+        - id: chambre-route
+          uri: http://chambre:8085/
+          predicates:
+            - Path=/chambres/**
+        - id: universite-route
+          uri: http://universite:8086/
+          predicates:
+            - Path=/universites/**
+
       globalcors:
         cors-configurations:
           '[/**]':
