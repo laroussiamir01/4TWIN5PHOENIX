@@ -14,7 +14,7 @@ export class BlocService {
     })
   }
   constructor(private http:HttpClient) { }
-  blocUrl = "http://localhost:8090/Bloc";
+  blocUrl = "http://localhost:8090/blocs";
   getAllBlocs(): Observable<Bloc[]> {
     return this.http.get<Bloc[]>(this.blocUrl)
       .pipe(

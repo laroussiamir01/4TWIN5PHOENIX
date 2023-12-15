@@ -38,6 +38,7 @@ const routes: Routes = [
       loadChildren:()=>
           import('./chambre/chambre.module').then(
             (m)=>m.ChambreModule)},
+            
             { path: 'evenement',loadChildren:()=>
             import('./evenement/evenement.module').then(m=>m.EvenementModule)},
     ],
